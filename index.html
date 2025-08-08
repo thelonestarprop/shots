@@ -3,147 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Profile</title>
+    <title>My Photography Portfolio</title>
+    <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* Dark background for GitHub feel */
+            background-color: #f8f8f8; /* Light background for the body */
         }
         /* Custom scrollbar for a cleaner look */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #21262d;
+            background: #f1f1f1;
         }
         ::-webkit-scrollbar-thumb {
-            background: #444c56;
+            background: #888;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #6a737d;
+            background: #555;
         }
     </style>
 </head>
-<body class="text-gray-200">
+<body class="text-gray-800">
 
-    <nav class="bg-gray-900 shadow-md p-4 sticky top-0 z-50 rounded-b-lg">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50 rounded-b-lg">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-200">
-                <svg class="w-8 h-8 inline-block mr-2" viewBox="0 0 16 16" version="1.1" aria-hidden="true" fill="currentColor">
-                    <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.19.01-.82.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8a8.013 8.013 0 0 1 7.59-7.59c.21-.04.46.12.46.36 0 .19-.01.82-.01 1.49 0 .17-.15.35-.46.35-.58.11-1.33-.21-1.61-.41-.12-.08-.2-.17-.29-.23-.2-.14-.4-.36-.61-.6-.2-.2-.46-.35-.74-.41-.28-.06-.55-.06-.82 0-.28.06-.55.19-.82.32-.28.14-.58.33-.82.47-.24.15-.46.3-.61.41-.15.12-.29.28-.41.44-.12.15-.22.31-.32.41-.1.1-.17.18-.23.23-.06.05-.12.09-.15.11-.03.02-.06.03-.09.03-.03 0-.06 0-.09 0-.25 0-.46.12-.67.24-.2-.15-.46-.22-.74-.22-1.12 0-2.04.82-2.04 1.92 0 .87.31 1.59.82 2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8z"></path>
-                </svg>
-                My GitHub
-            </a>
+            <a href="#" class="text-2xl font-bold text-gray-900">My Portfolio</a>
             <div class="hidden md:flex space-x-6">
-                <a href="#projects" class="text-gray-400 hover:text-white transition duration-300">Projects</a>
-                <a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a>
-                <a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a>
+                <a href="#home" class="text-gray-700 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="#gallery" class="text-gray-700 hover:text-blue-600 transition duration-300">Gallery</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition duration-300">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition duration-300">Contact</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-400 focus:outline-none">
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
+        <!-- Mobile Menu (hidden by default) -->
         <div id="mobile-menu" class="md:hidden mt-4 hidden">
-            <a href="#projects" class="block py-2 px-4 text-gray-400 hover:bg-gray-800 rounded-md">Projects</a>
-            <a href="#about" class="block py-2 px-4 text-gray-400 hover:bg-gray-800 rounded-md">About</a>
-            <a href="#contact" class="block py-2 px-4 text-gray-400 hover:bg-gray-800 rounded-md">Contact</a>
+            <a href="#home" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">Home</a>
+            <a href="#gallery" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">Gallery</a>
+            <a href="#about" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">About</a>
+            <a href="#contact" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">Contact</a>
         </div>
     </nav>
 
-    <section id="home" class="relative bg-gray-800 min-h-screen flex items-center justify-center text-white p-4">
-        <div class="z-10 text-center p-6 rounded-lg max-w-4xl mx-auto">
-            <img src="https://placehold.co/150x150/21262d/FFFFFF?text=Avatar" alt="Your Avatar" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-gray-600">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-2 leading-tight text-white">John Doe</h1>
-            <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-gray-400">Software Developer</h2>
-            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-300">
-                Building innovative and scalable solutions. Passionate about open-source and clean code.
-            </p>
-            <div class="flex justify-center space-x-4">
-                <a href="https://github.com/yourusername" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center">
-                    <svg class="w-5 h-5 mr-2" viewBox="0 0 16 16" version="1.1" aria-hidden="true" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.19.01-.82.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8a8.013 8.013 0 0 1 7.59-7.59c.21-.04.46.12.46.36 0 .19-.01.82-.01 1.49 0 .17-.15.35-.46.35-.58.11-1.33-.21-1.61-.41-.12-.08-.2-.17-.29-.23-.2-.14-.4-.36-.61-.6-.2-.2-.46-.35-.74-.41-.28-.06-.55-.06-.82 0-.28.06-.55.19-.82.32-.28.14-.58.33-.82.47-.24.15-.46.3-.61.41-.15.12-.29.28-.41.44-.12.15-.22.31-.32.41-.1.1-.17.18-.23.23-.06.05-.12.09-.15.11-.03.02-.06.03-.09.03-.03 0-.06 0-.09 0-.25 0-.46.12-.67.24-.2-.15-.46-.22-.74-.22-1.12 0-2.04.82-2.04 1.92 0 .87.31 1.59.82 2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8z"></path></svg>
-                    Visit GitHub Profile
-                </a>
-                <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">View Projects</a>
-            </div>
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-cover bg-center h-screen flex items-center justify-center text-white"
+        style="background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Stunning+Photography');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="z-10 text-center p-6 rounded-lg bg-black bg-opacity-40 max-w-2xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Capturing Moments, Creating Memories</h1>
+            <p class="text-lg md:text-xl mb-8">Passionate about visual storytelling through the lens.</p>
+            <a href="#gallery" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">View My Work</a>
         </div>
     </section>
 
-    <section id="projects" class="py-16 bg-gray-900">
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 p-6">
-                    <h3 class="text-2xl font-semibold mb-2 text-white">Project One</h3>
-                    <p class="text-gray-400 mb-4">A brief description of the project, its purpose, and the technologies used (e.g., React, Node.js, Tailwind CSS).</p>
-                    <a href="https://github.com/yourusername/project-one" target="_blank" class="text-blue-400 hover:underline flex items-center">
-                        <svg class="w-4 h-4 mr-1" viewBox="0 0 16 16" version="1.1" aria-hidden="true" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.19.01-.82.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8a8.013 8.013 0 0 1 7.59-7.59c.21-.04.46.12.46.36 0 .19-.01.82-.01 1.49 0 .17-.15.35-.46.35-.58.11-1.33-.21-1.61-.41-.12-.08-.2-.17-.29-.23-.2-.14-.4-.36-.61-.6-.2-.2-.46-.35-.74-.41-.28-.06-.55-.06-.82 0-.28.06-.55.19-.82.32-.28.14-.58.33-.82.47-.24.15-.46.3-.61.41-.15.12-.29.28-.41.44-.12.15-.22.31-.32.41-.1.1-.17.18-.23.23-.06.05-.12.09-.15.11-.03.02-.06.03-.09.03-.03 0-.06 0-.09 0-.25 0-.46.12-.67.24-.2-.15-.46-.22-.74-.22-1.12 0-2.04.82-2.04 1.92 0 .87.31 1.59.82 2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8z"></path></svg>
-                        View on GitHub
-                    </a>
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">My Portfolio</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- IMPORTANT: Place your photos in a folder named 'photos' and update the src attribute. -->
+
+                <!-- Gallery Item 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="photos/landscape-photography.jpg" onerror="this.src='https://placehold.co/600x400/FF5733/FFFFFF?text=Landscape'" alt="Landscape Photography" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">Majestic Landscapes</h3>
+                        <p class="text-gray-600">Breathtaking views of nature's finest creations.</p>
+                    </div>
                 </div>
-                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 p-6">
-                    <h3 class="text-2xl font-semibold mb-2 text-white">Project Two</h3>
-                    <p class="text-gray-400 mb-4">Another project description, highlighting its key features and tech stack (e.g., Python, Django, PostgreSQL).</p>
-                    <a href="https://github.com/yourusername/project-two" target="_blank" class="text-blue-400 hover:underline flex items-center">
-                        <svg class="w-4 h-4 mr-1" viewBox="0 0 16 16" version="1.1" aria-hidden="true" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.19.01-.82.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8a8.013 8.013 0 0 1 7.59-7.59c.21-.04.46.12.46.36 0 .19-.01.82-.01 1.49 0 .17-.15.35-.46.35-.58.11-1.33-.21-1.61-.41-.12-.08-.2-.17-.29-.23-.2-.14-.4-.36-.61-.6-.2-.2-.46-.35-.74-.41-.28-.06-.55-.06-.82 0-.28.06-.55.19-.82.32-.28.14-.58.33-.82.47-.24.15-.46.3-.61.41-.15.12-.29.28-.41.44-.12.15-.22.31-.32.41-.1.1-.17.18-.23.23-.06.05-.12.09-.15.11-.03.02-.06.03-.09.03-.03 0-.06 0-.09 0-.25 0-.46.12-.67.24-.2-.15-.46-.22-.74-.22-1.12 0-2.04.82-2.04 1.92 0 .87.31 1.59.82 2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8a8.013 8.013 0 0 1 7.59-7.59c.21-.04.46.12.46.36 0 .19-.01.82-.01 1.49 0 .17-.15.35-.46.35-.58.11-1.33-.21-1.61-.41-.12-.08-.2-.17-.29-.23-.2-.14-.4-.36-.61-.6-.2-.2-.46-.35-.74-.41-.28-.06-.55-.06-.82 0-.28.06-.55.19-.82.32-.28.14-.58.33-.82.47-.24.15-.46.3-.61.41-.15.12-.29.28-.41.44-.12.15-.22.31-.32.41-.1.1-.17.18-.23.23-.06.05-.12.09-.15.11-.03.02-.06.03-.09.03-.03 0-.06 0-.09 0-.25 0-.46.12-.67.24-.2-.15-.46-.22-.74-.22-1.12 0-2.04.82-2.04 1.92 0 .87.31 1.59.82 2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8z"></path></svg>
-                        View on GitHub
-                    </a>
+                <!-- Gallery Item 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="photos/portrait-photography.jpg" onerror="this.src='https://placehold.co/600x400/33FF57/FFFFFF?text=Portrait'" alt="Portrait Photography" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">Intimate Portraits</h3>
+                        <p class="text-gray-600">Capturing the essence and emotion of individuals.</p>
+                    </div>
                 </div>
-                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 p-6">
-                    <h3 class="text-2xl font-semibold mb-2 text-white">Project Three</h3>
-                    <p class="text-gray-400 mb-4">A third project, detailing its purpose and the technologies used (e.g., JavaScript, Vue.js, Firebase).</p>
-                    <a href="https://github.com/yourusername/project-three" target="_blank" class="text-blue-400 hover:underline flex items-center">
-                        <svg class="w-4 h-4 mr-1" viewBox="0 0 16 16" version="1.1" aria-hidden="true" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.19.01-.82.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8a8.013 8.013 0 0 1 7.59-7.59c.21-.04.46.12.46.36 0 .19-.01.82-.01 1.49 0 .17-.15.35-.46.35-.58.11-1.33-.21-1.61-.41-.12-.08-.2-.17-.29-.23-.2-.14-.4-.36-.61-.6-.2-.2-.46-.35-.74-.41-.28-.06-.55-.06-.82 0-.28.06-.55.19-.82.32-.28.14-.58.33-.82.47-.24.15-.46.3-.61.41-.15.12-.29.28-.41.44-.12.15-.22.31-.32.41-.1.1-.17.18-.23.23-.06.05-.12.09-.15.11-.03.02-.06.03-.09.03-.03 0-.06 0-.09 0-.25 0-.46.12-.67.24-.2-.15-.46-.22-.74-.22-1.12 0-2.04.82-2.04 1.92 0 .87.31 1.59.82 2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8a8.013 8.013 0 0 1 7.59-7.59c.21-.04.46.12.46.36 0 .19-.01.82-.01 1.49 0 .17-.15.35-.46.35-.58.11-1.33-.21-1.61-.41-.12-.08-.2-.17-.29-.23-.2-.14-.4-.36-.61-.6-.2-.2-.46-.35-.74-.41-.28-.06-.55-.06-.82 0-.28.06-.55.19-.82.32-.28.14-.58.33-.82.47-.24.15-.46.3-.61.41-.15.12-.29.28-.41.44-.12.15-.22.31-.32.41-.1.1-.17.18-.23.23-.06.05-.12.09-.15.11-.03.02-.06.03-.09.03-.03 0-.06 0-.09 0-.25 0-.46.12-.67.24-.2-.15-.46-.22-.74-.22-1.12 0-2.04.82-2.04 1.92 0 .87.31 1.59.82 2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8a8.013 8.013 0 0 1 7.59-7.59c.21-.04.46.12.46.36 0 .19-.01.82-.01 1.49 0 .17-.15.35-.46.35-.58.11-1.33-.21-1.61-.41-.12-.08-.2-.17-.29-.23-.2-.14-.4-.36-.61-.6-.2-.2-.46-.35-.74-.41-.28-.06-.55-.06-.82 0-.28.06-.55.19-.82.32-.28.14-.58.33-.82.47-.24.15-.46.3-.61.41-.15.12-.29.28-.41.44-.12.15-.22.31-.32.41-.1.1-.17.18-.23.23-.06.05-.12.09-.15.11-.03.02-.06.03-.09.03-.03 0-.06 0-.09 0-.25 0-.46.12-.67.24-.2-.15-.46-.22-.74-.22-1.12 0-2.04.82-2.04 1.92 0 .87.31 1.59.82 2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 8 16c-4.42 0-8-3.58-8-8z"></path></svg>
-                        View on GitHub
-                    </a>
+                <!-- Gallery Item 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="photos/wildlife-photography.jpg" onerror="this.src='https://placehold.co/600x400/3357FF/FFFFFF?text=Wildlife'" alt="Wildlife Photography" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">Wild Encounters</h3>
+                        <p class="text-gray-600">Documenting the beauty of wildlife in their natural habitat.</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="photos/cityscape-photography.jpg" onerror="this.src='https://placehold.co/600x400/FF33A1/FFFFFF?text=Cityscape'" alt="Cityscape Photography" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">Urban Vistas</h3>
+                        <p class="text-gray-600">The dynamic energy and architecture of cityscapes.</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="photos/event-photography.jpg" onerror="this.src='https://placehold.co/600x400/A133FF/FFFFFF?text=Event'" alt="Event Photography" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">Vibrant Events</h3>
+                        <p class="text-gray-600">Reliving the joy and excitement of special occasions.</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 6 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="photos/abstract-photography.jpg" onerror="this.src='https://placehold.co/600x400/33FFF5/FFFFFF?text=Abstract'" alt="Abstract Photography" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">Abstract Visions</h3>
+                        <p class="text-gray-600">Exploring patterns, textures, and unique perspectives.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-16 bg-gray-800">
+    <!-- About Me Section -->
+    <section id="about" class="py-16 bg-white">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2 text-center md:text-left">
-                <h2 class="text-4xl font-bold mb-6 text-white">About Me</h2>
-                <p class="text-lg text-gray-400 mb-4">
-                    I'm a software developer with a strong focus on [Your Expertise, e.g., web development, data science, mobile apps]. I love turning complex problems into elegant, simple solutions. My journey began in [Year] and since then, I've been fascinated by the power of code to create and innovate.
-                </p>
-                <p class="text-lg text-gray-400 mb-4">
-                    My skills include [list key skills, e.g., JavaScript, Python, C++, React, Docker]. I'm a firm believer in the collaborative nature of development and I'm always looking for opportunities to contribute to open-source projects.
-                </p>
-                <p class="text-lg text-gray-400">
-                    When I'm not coding, I'm usually [mention a hobby, e.g., exploring new technologies, contributing to developer communities, hiking, playing video games].
-                </p>
-            </div>
             <div class="md:w-1/2">
-                <img src="https://placehold.co/600x400/21262d/FFFFFF?text=Developer+Image" alt="Developer Photo" class="rounded-lg w-full shadow-lg border border-gray-600">
+                <img src="photos/your-photo.jpg" onerror="this.src='https://placehold.co/600x400/CCCCCC/333333?text=Your+Photo'" alt="Your Photo" class="rounded-full w-64 h-64 object-cover mx-auto md:mx-0 shadow-lg">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-4xl font-bold mb-6 text-gray-900">About Me</h2>
+                <p class="text-lg text-gray-700 mb-4">
+                    Hello! I'm [Your Name], a passionate photographer based in Dallas, TX. My journey into photography began [Year] when I picked up my first camera and fell in love with capturing the world around me.
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    I specialize in [mention your specialties, e.g., landscape, portrait, event] photography, always striving to tell a unique story through each frame. For me, photography is more than just taking pictures; it's about preserving moments, evoking emotions, and revealing the unseen beauty in everyday life.
+                </p>
+                <p class="text-lg text-gray-700">
+                    When I'm not behind the lens, you can find me [mention a hobby or interest, e.g., hiking, exploring new places, reading]. I'm always eager to connect with new people and collaborate on exciting projects.
+                </p>
             </div>
         </div>
     </section>
-    
-    <section id="contact" class="py-16 bg-gray-900">
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Get in Touch</h2>
-            <div class="max-w-xl mx-auto bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-600">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Get in Touch</h2>
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg">
                 <form action="#" method="POST" class="space-y-6">
                     <div>
-                        <label for="name" class="block text-lg font-medium text-gray-200 mb-2">Name</label>
+                        <label for="name" class="block text-lg font-medium text-gray-700 mb-2">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name"
-                            class="mt-1 block w-full px-4 py-3 bg-gray-700 text-white border border-gray-600 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-lg" required>
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-lg" required>
                     </div>
                     <div>
-                        <label for="email" class="block text-lg font-medium text-gray-200 mb-2">Email</label>
+                        <label for="email" class="block text-lg font-medium text-gray-700 mb-2">Email</label>
                         <input type="email" id="email" name="email" placeholder="you@example.com"
-                            class="mt-1 block w-full px-4 py-3 bg-gray-700 text-white border border-gray-600 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-lg" required>
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-lg" required>
                     </div>
                     <div>
-                        <label for="message" class="block text-lg font-medium text-gray-200 mb-2">Message</label>
+                        <label for="message" class="block text-lg font-medium text-gray-700 mb-2">Message</label>
                         <textarea id="message" name="message" rows="5" placeholder="Your message here..."
-                            class="mt-1 block w-full px-4 py-3 bg-gray-700 text-white border border-gray-600 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-lg" required></textarea>
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-lg" required></textarea>
                     </div>
                     <div class="text-center">
                         <button type="submit"
@@ -156,13 +180,14 @@
         </div>
     </section>
 
-    <footer class="bg-gray-950 text-white py-8">
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 John Doe. All rights reserved.</p>
+            <p>&copy; 2025 My Photography Portfolio. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mt-4">
-                <a href="https://github.com/yourusername" target="_blank" class="text-gray-400 hover:text-white transition duration-300">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
                 <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
             </div>
         </div>
     </footer>
